@@ -2,10 +2,10 @@
 class Database{
   
     // specify your own database credentials
-    private $host = "localhost";
+    private $host = "acw2033ndw0at1t7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
     private $db_name = "quotesdb";
-    private $username = "root";
-    private $password = "";
+    private $username = "	r6r5aagukx1oa3h7";
+    private $password = "shcdhwtlafp65zoh";
     public $conn;
   
     // get the database connection
