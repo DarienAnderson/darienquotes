@@ -1,11 +1,20 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json');
+$method = $_SERVER['REQUEST_METHOD'];
+if ($method === 'OPTIONS') {
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+    header('Access-Control-Allow-Headers: Origin, Accept, Content-Type, X-Requested-With');
+}
+
+include_once '../config/validit.php';
 class Database{
   
     // specify your own database credentials
-    private $host = "acw2033ndw0at1t7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    private $host = "localhost";
     private $db_name = "quotesdb";
-    private $username = "	r6r5aagukx1oa3h7";
-    private $password = "shcdhwtlafp65zoh";
+    private $username = "root";
+    private $password = "";
     public $conn;
   
     // get the database connection
