@@ -6,3 +6,28 @@ if ($method === 'OPTIONS') {
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
     header('Access-Control-Allow-Headers: Origin, Accept, Content-Type, X-Requested-With');
 }
+include_once '../config/database.php';
+include_once '../authors/index.php';
+    $database = new Database();
+    $db = $database->getConnection();
+    $items = new item($db);
+    $item->id = isset($_GET['id']) ? $_GET['id'] : die();
+  
+    $item->getSingleItem();
+    if($item->author != null){
+        // create array
+        $emp_arr = array(
+            "id" =>  $item->id,
+            "author" => $item->author,
+
+        );
+      
+        http_response_code(200);
+        echo json_encode($emp_arr);
+    }
+      
+    else{
+        http_response_code(404);
+        echo json_encode("author not found.");
+    }
+?>
