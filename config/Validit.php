@@ -10,15 +10,15 @@ if ($method === 'OPTIONS') {
 function Database() {
 
 
-$url = getenv('JAWSDB_URL');
- $dbparts = parse_url($this->url);
+  $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     // specify your own database credentials
 
   
-  $hostname = $dbparts['acw2033ndw0at1t7.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'];
-$username = $dbparts['r6r5aagukx1oa3h7'];
-    $password = $dbparts['shcdhwtlafp65zoh'];
-  $database = ltrim($dbparts['https://darien-quotes-api.herokuapp.com'],'1');
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"], 1);
+    
 
   }
     // get the database connection
@@ -28,7 +28,7 @@ $username = $dbparts['r6r5aagukx1oa3h7'];
         $this->conn = null;
   
         try {
-            $Conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+            $conn = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo "Connected successfully";

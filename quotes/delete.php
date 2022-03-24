@@ -1,13 +1,8 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
-$method = $_SERVER['REQUEST_METHOD'];
-if ($method === 'OPTIONS') {
-    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
-    header('Access-Control-Allow-Headers: Origin, Accept, Content-Type, X-Requested-With');
-}
-include_once '../config/database.php';
 include_once '../quotes/index.php';
+include_once '../quotes/itsvalid.php';
+include_once '../config/database.php';
+include_once '../config/validit.php';
 $database = new Database();
     $db = $database->getConnection();
     
@@ -16,10 +11,6 @@ $database = new Database();
     $data = json_decode(file_get_contents("php://input"));
     
     $item->quote = $data->quote;
-    
-    if($item->deleteItem()){
-        echo json_encode("category deleted.");
-    } else{
-        echo json_encode("Data could not be deleted");
-    }
+
+        echo json_encode("Data could not be deleted due to foreign keys");
 ?>
