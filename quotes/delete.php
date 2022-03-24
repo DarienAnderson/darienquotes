@@ -1,7 +1,6 @@
 <?php
 include_once '../quotes/index.php';
 include_once '../quotes/itsvalid.php';
-include_once '../config/database.php';
 include_once '../config/validit.php';
 $database = new Database();
     $db = $database->getConnection();
