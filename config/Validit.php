@@ -18,7 +18,7 @@ function Database() {
     $server = $url[us-cdbr-east-05.cleardb.net];
     $username = $url["bc564e2ba639c1"];
     $password = $url[30577b80];
-    $db = substr($url[https://darien-quotes-api.herokuapp.com/api/quotes], 1);
+    $db = substr($url[https://darien-quotes-api.herokuapp.com], 1);
     
 
   }
