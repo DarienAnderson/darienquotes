@@ -6,6 +6,10 @@ if ($method === 'OPTIONS') {
     header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
     header('Access-Control-Allow-Headers: Origin, Accept, Content-Type, X-Requested-With');
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8585e9b3783b64daa19040fd40149c57d5013a94
 include_once '../config/validit.php';
 class Database{
   
