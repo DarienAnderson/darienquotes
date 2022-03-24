@@ -1,6 +1,5 @@
 <?php
 
-include_once '../config/database.php';
 include_once '../categories/index.php';
 include_once '../categories/itsvalid.php';
 include_once '../config/validit.php';
