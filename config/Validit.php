@@ -15,10 +15,10 @@ function Database() {
     // specify your own database credentials
 
   
-    $server = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $db = substr($url["path"], 1);
+    $server = $url[us-cdbr-east-05.cleardb.net];
+    $username = $url["bc564e2ba639c1"];
+    $password = $url[30577b80];
+    $db = substr($url[https://darien-quotes-api.herokuapp.com/api/quotes], 1);
     
 
   }
